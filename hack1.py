@@ -6,8 +6,6 @@ import os
 import hackathon_params as hp
 import sys
 
-hp.hackParams(40,40,3)
-
 jsonfile = sys.argv[1]
 
 if jsonfile:
@@ -17,16 +15,15 @@ else:
     params = dict()
 
 #print type(params)
-#print 'my params:', params
+print 'my params:', params
 
 
 
-nx = params.get('nx',40)
-ny = params.get('ny',40)
+N = params.get('N',20)
 total_steps = params.get('steps',2)
 sumatra_label = params.get('sumatra_label', '')
 
-mesh = fp.PeriodicGrid2D(nx=nx, ny=ny, dx=0.5, dy=0.5)    # changed 400 to 40 for nx and ny to test a faster run
+mesh = fp.PeriodicGrid2D(nx=N, ny=N, dx=0.5, dy=0.5)    # changed 400 to 40 for nx and ny to test a faster run
 
 c_alpha = 0.05
 c_beta = 0.95
